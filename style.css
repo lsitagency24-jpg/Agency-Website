@@ -1,0 +1,119 @@
+/*
+Theme Name: LSIT Agency
+Theme URI: https://lsitagency.com
+Author: LSIT Agency
+Author URI: https://lsitagency.com
+Description: Custom WordPress theme for LSIT Agency — digital marketing, web development and branding.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lsit-agency
+*/
+
+:root {
+	--c-bg: #0b1020;
+	--c-surface: #121a33;
+	--c-text: #e8ecf8;
+	--c-muted: #9aa6c7;
+	--c-accent: #6c5ce7;
+	--c-accent-2: #00d2d3;
+	--radius: 14px;
+	--max: 1160px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif;
+	background: var(--c-bg);
+	color: var(--c-text);
+	line-height: 1.6;
+}
+
+a { color: var(--c-accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; }
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.site-header {
+	position: sticky; top: 0; z-index: 50;
+	background: rgba(11, 16, 32, .85);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; min-height: 68px; }
+.site-branding a { color: var(--c-text); font-weight: 800; font-size: 1.3rem; }
+.site-branding span { color: var(--c-accent); }
+.custom-logo { max-height: 48px; width: auto; }
+
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; }
+.main-nav a { color: var(--c-muted); font-weight: 500; }
+.main-nav a:hover { color: var(--c-text); text-decoration: none; }
+.nav-toggle { display: none; background: none; border: 0; color: var(--c-text); font-size: 1.6rem; cursor: pointer; }
+
+/* Buttons */
+.btn {
+	display: inline-block; padding: 12px 26px; border-radius: 999px;
+	background: linear-gradient(135deg, var(--c-accent), var(--c-accent-2));
+	color: #fff; font-weight: 600; border: 0; cursor: pointer;
+}
+.btn:hover { text-decoration: none; opacity: .92; }
+.btn-outline { background: transparent; border: 1px solid rgba(255, 255, 255, .25); }
+
+/* Sections */
+section { padding: 88px 0; }
+.section-title { text-align: center; margin: 0 0 12px; font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.section-sub { text-align: center; color: var(--c-muted); max-width: 620px; margin: 0 auto 48px; }
+
+.hero { padding: 120px 0 100px; text-align: center; background: radial-gradient(ellipse at top, rgba(108, 92, 231, .35), transparent 60%); }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.15; margin: 0 0 20px; }
+.hero p { color: var(--c-muted); font-size: 1.15rem; max-width: 680px; margin: 0 auto 32px; }
+.hero .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card {
+	background: var(--c-surface); border: 1px solid rgba(255, 255, 255, .06);
+	border-radius: var(--radius); padding: 28px; transition: transform .2s;
+}
+.card:hover { transform: translateY(-4px); }
+.card .icon { font-size: 2rem; margin-bottom: 12px; }
+.card h3 { margin: 0 0 8px; }
+.card p { color: var(--c-muted); margin: 0; }
+
+.stats { background: var(--c-surface); }
+.stats .grid { text-align: center; }
+.stat-num { font-size: 2.6rem; font-weight: 800; color: var(--c-accent-2); }
+.stat-label { color: var(--c-muted); }
+
+.cta { text-align: center; }
+.cta-box {
+	background: linear-gradient(135deg, var(--c-accent), #4834d4);
+	border-radius: var(--radius); padding: 56px 24px;
+}
+.cta-box p { opacity: .9; }
+
+/* Content */
+.content-area { padding: 64px 0; }
+.entry { background: var(--c-surface); border-radius: var(--radius); padding: 32px; margin-bottom: 24px; }
+.entry-title { margin-top: 0; }
+.entry-title a { color: var(--c-text); }
+.entry-meta { color: var(--c-muted); font-size: .9rem; margin-bottom: 16px; }
+
+/* Footer */
+.site-footer { border-top: 1px solid rgba(255, 255, 255, .06); padding: 40px 0; color: var(--c-muted); text-align: center; }
+.site-footer .social { display: flex; justify-content: center; gap: 18px; margin-bottom: 12px; }
+
+@media (max-width: 782px) {
+	.nav-toggle { display: block; }
+	.main-nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--c-bg); padding: 16px; }
+	.main-nav.open { display: block; }
+	.main-nav ul { flex-direction: column; gap: 14px; }
+	section { padding: 64px 0; }
+}
